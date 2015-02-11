@@ -19,8 +19,7 @@ def DrawText():
     draw.text((int(500/font_size),0), unicode('国', 'UTF-8'), font = font)
     im_base_data = list(im_base.getdata())
     
-    #font = ImageFont.truetype(path + "truetypefont.ttf", font_size)
-    font = ImageFont.truetype('/media/autstanding/066CA48F6CA47B57/Windows/Fonts/simsun.ttc', font_size)
+    font = ImageFont.truetype(path + "truetypefont.ttf", font_size)
     im = Image.new("1", (1120, 792), "white")
     line_space = 1
     line_number = 0
@@ -31,7 +30,7 @@ def DrawText():
 
     for i in range(0, len(im_base_data)):
         if im_base_data[i] != 255:
-            draw.text((int(i % int(1120/font_size)) * font_size,  int(i / int(792/font_size)) * font_size), content[i], font = font)
+            draw.text((int(i % int(1120/font_size)) * font_size,  int(i / int(1120/font_size)) * font_size), content[i], font = font)
     del draw
     im.save(path + "test.jpg", "JPEG")
    
